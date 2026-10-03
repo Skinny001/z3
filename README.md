@@ -72,6 +72,11 @@ docker compose --env-file .env.regtest up -d
 
 After the first run, the `up -d` line alone is enough. See [docs/regtest.md](docs/regtest.md) for test commands and the full workflow.
 
+
+## Gleyo Challenge Submission
+**What I changed and why:**
+I modified `.env.regtest` to add `Z3_ZEBRA_RUST_LOG=debug`. This provides more verbose logging output from Zebra during regtest development, making it easier to trace internal events and troubleshoot the node.
+
 ### Where your data lives
 
 Each network keeps its chain state in a Docker named volume called `z3-<network>-chain`, which lands under Docker's data root (on Linux, `/var/lib/docker/volumes/`). Mainnet is roughly **300 GB**; size the disk before you start.
